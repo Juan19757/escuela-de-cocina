@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pagina sencilla</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/Index.css">
+</head>
+<body>
+	
+
+	<!-- Contenedor del logo -->
+	<div class="logo-container">
+		<img src="../IMG/logo.svg" alt="Logo" class="logo">
+	</div>
+
+	<div class="titulo">
+		<h1>Escuela de Cocina</h1>
+	</div>
+
+	<!-- Menú de navegación -->
+	<nav>
+		<ul>
+			<li><a href="../HTML/index.html">Inicio</a></li>
+			<li><a href="../HTML/cards.html">instructores reconocidos</a></li>
+			<li><a href="../HTML/nosotros.html">Sobre nosotros</a></li>
+			<li><a href="../HTML/clases.html">clases</a></li>
+			<li><a href="../HTML/vendidos.html">los cursos mas vendidos</a></li>
+            <li><a href="../HTML/login.html">saber mas</a></li>
+            <li><a href="./preguntas.html">preguntas</a></li>
+			<li><a href="../HTML/telefono.html">donde encontrarnos?</a></li>
+		</ul>
+	</nav>
+	<!-- Carrusel -->
+<div class="carrucel-container">
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="../IMG/curso_3.jpg" alt="Curso 1" class="carousel-image">
+            <img src="../IMG/clase6.jpg" alt="Curso 2" class="carousel-image">
+            <img src="../IMG/bloque_2.jpg" alt="Curso 3" class="carousel-image">
+        </div>
+        <div class="carousel-buttons">
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+	<div class="contenido">
+		<div class="articulo">
+			<div>
+				<h2>Receta de la abuela</h2>
+				<p>la receta de la abuela nace en el año 1990 cuando le estaba dando el almuerzo a la familia les preparo algo diferente...</p>
+				<img src="../IMG/images.jpg">
+			</div>
+			<div>
+				<h2>cabiar estilo colombiano</h2>
+				<p>este manjar lo hacen en la costa atlantica y se conserva hasta llegar a su sabor que lo hace tan peculiar al resto </p>
+				<img src="../IMG/cabiar.jpg">
+			</div>
+			<div>
+				<h2>spaguettis premium</h2>
+				<p>estos spaguettis los traen desde italia para luego crear una exquisita receta colombiana</p>
+				<img src="../IMG/spaguettis.jpg" alt="">
+			</div>
+			
+		</div>
+		<div class="secundario">
+			<p>IMPORTANTE/ ATENCION: si deseas saber mas sobre nosotros te invitamos a iniciar sesion y conocer y aprender sobre nuestras recetas de cocina y trucos que te pueden ayudar y facilitar las cosas 
+				
+
+				
+				Anuncio: si deseas ser parte de nuestra familia y ser un gran chef apartir del 26 de diciembre hasta el 30 de febrero estara abierta la convocatoria con un grandioso descuento, te esperaromos!
+			</p>
+		</div>
+	</div>
+
+	<div class="piedepagina">
+		<p>derechos de la pagina sobre todas las cosas</p>
+	</div>
+
+	
+	<script>
+        // JavaScript para el carrusel
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+        const totalImages = images.length;
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        // Función para mostrar la imagen correspondiente al índice
+        function showImage(index) {
+            const offset = -index * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Función para ir a la imagen anterior
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            showImage(currentIndex);
+        });
+
+        // Función para ir a la siguiente imagen
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        });
+
+        // Mostrar la primera imagen al cargar la página
+        showImage(currentIndex);
+    </script>
+
+
+</body>
+</html>
